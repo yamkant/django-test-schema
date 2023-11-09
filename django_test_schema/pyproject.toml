@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "django-test-schema"
+version = "0.1.0"
+description = ""
+authors = ["yamkant <dev.yamkim@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pytest = "^7.4.3"
+django = "^4.2.7"
+djangorestframework = "^3.14.0"
+pytest-django = "^4.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
