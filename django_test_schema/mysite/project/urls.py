@@ -15,7 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include
+from dj_rest_auth.views import LoginView
 
 urlpatterns = [
-    path('v1/products/', include('apps.products.urls')),
+    path("auth/login/", LoginView.as_view(), name="auth_login"),
+    path('products/', include('apps.products.urls')),
+    path("users/", include("apps.users.urls")),
 ]

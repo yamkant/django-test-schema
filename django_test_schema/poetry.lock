@@ -29,6 +29,23 @@ files = [
 ]
 
 [[package]]
+name = "dj-rest-auth"
+version = "5.0.1"
+description = "Authentication and Registration in Django Rest Framework"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "dj-rest-auth-5.0.1.tar.gz", hash = "sha256:2f574edd7bcc9a421e6e1d9d47f7b1eb56b71eb797927be135c995ea546dd9b5"},
+]
+
+[package.dependencies]
+Django = ">=3.2"
+djangorestframework = ">=3.13.0"
+
+[package.extras]
+with-social = ["django-allauth (>=0.55.0,<0.56.0)"]
+
+[[package]]
 name = "django"
 version = "4.2.7"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -62,6 +79,30 @@ files = [
 [package.dependencies]
 django = ">=3.0"
 pytz = "*"
+
+[[package]]
+name = "djangorestframework-simplejwt"
+version = "5.3.0"
+description = "A minimal JSON Web Token authentication plugin for Django REST Framework"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "djangorestframework_simplejwt-5.3.0-py3-none-any.whl", hash = "sha256:631d7ae2ed4365d7196a35d3cc0f6d382f7bd3361fb24c894f8f92b4da5db27d"},
+    {file = "djangorestframework_simplejwt-5.3.0.tar.gz", hash = "sha256:8e4c5dfca8d11c0b8a66dfd8a4e3fc1c6aa7ea188d10907ff91c942f4b52ed66"},
+]
+
+[package.dependencies]
+django = ">=3.2"
+djangorestframework = ">=3.10"
+pyjwt = ">=1.7.1,<3"
+
+[package.extras]
+crypto = ["cryptography (>=3.3.1)"]
+dev = ["Sphinx (>=1.6.5,<2)", "cryptography", "flake8", "ipython", "isort", "pep8", "pytest", "pytest-cov", "pytest-django", "pytest-watch", "pytest-xdist", "python-jose (==3.3.0)", "sphinx-rtd-theme (>=0.1.9)", "tox", "twine", "wheel"]
+doc = ["Sphinx (>=1.6.5,<2)", "sphinx-rtd-theme (>=0.1.9)"]
+lint = ["flake8", "isort", "pep8"]
+python-jose = ["python-jose (==3.3.0)"]
+test = ["cryptography", "pytest", "pytest-cov", "pytest-django", "pytest-xdist", "tox"]
 
 [[package]]
 name = "exceptiongroup"
@@ -113,6 +154,22 @@ files = [
 [package.extras]
 dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
+
+[[package]]
+name = "pyjwt"
+version = "1.7.1"
+description = "JSON Web Token implementation in Python"
+optional = false
+python-versions = "*"
+files = [
+    {file = "PyJWT-1.7.1-py2.py3-none-any.whl", hash = "sha256:5c6eca3c2940464d106b99ba83b00c6add741c9becaec087fb7ccdefea71350e"},
+    {file = "PyJWT-1.7.1.tar.gz", hash = "sha256:8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96"},
+]
+
+[package.extras]
+crypto = ["cryptography (>=1.4)"]
+flake8 = ["flake8", "flake8-import-order", "pep8-naming"]
+test = ["pytest (>=4.0.1,<5.0.0)", "pytest-cov (>=2.6.0,<3.0.0)", "pytest-runner (>=4.2,<5.0.0)"]
 
 [[package]]
 name = "pytest"
@@ -217,4 +274,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "ce11eeb5e5d7db5721a318afab0837605d2c091243ec0b8c382207708cd93a0c"
+content-hash = "9f06b7c078281d2307d4d747ba16aa98395704d96106759dc577be5dcd8d4062"

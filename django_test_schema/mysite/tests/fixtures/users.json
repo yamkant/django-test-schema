@@ -1,0 +1,29 @@
+[
+  {
+    "model": "users.User",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$TChmhlrIksQIMSXv2Uj5Sv$BvOSmhkuntAjehl1I+lWjZExNVPUKJ3RTZFG9mTYNa8=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "yamkim",
+      "first_name": "",
+      "last_name": "",
+      "email": "yamkim@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-06-10T10:10:41.920Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.UserProfile",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "gender": "M",
+      "date_of_birth": "1992-07-13"
+    }
+  }
+]

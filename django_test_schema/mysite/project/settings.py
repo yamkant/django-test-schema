@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd party libraries
+    'dj_rest_auth',
     'rest_framework',
+    'rest_framework.authtoken', 
 
     # apps
-    'apps.products'
+    'apps.products',
+    'apps.users',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +130,18 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Authentication =======================================
+AUTH_USER_MODEL = "users.User"
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    ),
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+}
+REST_AUTH = {
+    "USER_DETAILS_SERIALIZER": "apps.users.serializers.UserBaseSerializer",
+    "USE_JWT": True,
+    'JWT_AUTH_COOKIE': 'my-app-auth',
+    'JWT_AUTH_REFRESH_COOKIE': 'my-refresh-token',
+}
